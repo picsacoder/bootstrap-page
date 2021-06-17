@@ -16,7 +16,18 @@ function api_call() {
             Error 404: City Not Found
             </div>`;
             
-            document.body.innerHTML = alerta;
+            let error_view = document.createElement("div");
+            error_view.classList.add("alert");
+            error_view.classList.add("alert-danger");
+            error_view.role = "alert";
+            error_view.id = "error";
+
+            error_view.innerHTML = "ERROR 404: City Not Found";
+            
+
+            document.body.appendChild(error_view);
+
+            
         }
 
 
@@ -24,11 +35,6 @@ function api_call() {
     })
   
     .catch(err => {
-            let alerta = `<div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
-            </div>`;
-            
-            document.body.innerHTML = alerta;
 
             console.log(err);
         
