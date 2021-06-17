@@ -16,18 +16,31 @@ function api_call() {
             Error 404: City Not Found
             </div>`;
             
-            let error_view = document.createElement("div");
-            error_view.classList.add("alert");
-            error_view.classList.add("alert-danger");
-            error_view.role = "alert";
-            error_view.id = "error";
 
-            error_view.innerHTML = "ERROR 404: City Not Found";
-            
+            document.getElementById("content").innerHTML = alerta
 
-            document.body.appendChild(error_view);
 
             
+        }
+
+        else { 
+            console.log(data.weather[0].description)
+            let tarjeta = `<div class="card w-75 h-75" style="width: 18rem; margin: 0 auto;">
+
+                <div class="card-body">
+                <h5 class="card-title">${city_name.value}</h5>
+                <h6 class="card-title">${data.weather[0].main}</h6>
+                <br>
+                <p class="card-text">Description: ${data.weather[0].description}.</p>
+                <p class="card-text">Temperature: ${data.main.temp}</p>
+                <p class="card-text">Country: ${data.sys.country}</p>
+                <p class="card-text">Cloudiness: ${data.clouds.all}%</p>
+
+
+                </div>
+            </div>`
+
+            document.getElementById("content").innerHTML = tarjeta
         }
 
 
@@ -43,21 +56,17 @@ function api_call() {
 }
 
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
-}
-
-getLocation()
 
 function owo() { 
     console.log(city_name.value);
 }
+
+function FuncionInutil(event) {
+    var codigo = event.keyCode;
+     
+    if(codigo === 13){
+      api_call()
+    }
+    
+ }
