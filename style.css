@@ -5,3 +5,9 @@ footer {
     text-decoration: none;
     text-align: center;
 }
+
+
+#map {
+	height: 500px;
+	width: 100%;
+}
