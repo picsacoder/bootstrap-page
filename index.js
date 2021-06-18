@@ -25,7 +25,7 @@ function api_call() {
 
         else {
             
-            var coord = {lat:data.coord.lat ,lng: data.coord.lon};
+            var coord = {lat:data.coord.lon ,lng: data.coord.lat};
 
             var map = new google.maps.Map(document.getElementById('map'),{
                 zoom: 10,
