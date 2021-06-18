@@ -23,7 +23,21 @@ function api_call() {
             
         }
 
-        else { 
+        else {
+            
+            var coord = {lat:data.coord.lat ,lng: -data.coord.lat};
+
+            var map = new google.maps.Map(document.getElementById('map'),{
+                zoom: 10,
+                center: coord
+            });
+
+            var marker = new google.maps.Marker({
+                position: coord,
+                map: map
+            });
+        
+
             console.log(data.weather[0].description)
             let tarjeta = `<div class="card w-75 h-75" style="width: 18rem; margin: 0 auto;">
 
