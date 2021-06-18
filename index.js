@@ -73,7 +73,7 @@ function FuncionInutil(event) {
 
 
  function iniciarMap(){
-    var coord = {lat:25 ,lng: -107.5};
+    var coord = {lat:-34.5956145 ,lng: -58.4431949};
     var map = new google.maps.Map(document.getElementById('map'),{
       zoom: 10,
       center: coord
